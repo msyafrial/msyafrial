@@ -58,7 +58,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <a href="#">Halaman Awal</a>
+            <a href="./">Halaman Awal</a>
           </li>
           <li><a href="#">Informasi</a></li>
           <li><a href="#f">Kontak</a></li>
@@ -123,12 +123,12 @@
     <div class="row">
       <br>
       <div class="col-lg-5">
-        <img class="img-responsive" src="img/half-mac2.png" alt="" />
+        <img class="img-responsive" src="img/tsunami-waves.png" alt="" />
       </div>
       <!-- /col-lg-6 -->
 
       <div class="col-lg-6">
-        <h4 style="padding-top: 10px; margin: 0;"><b>Pengertian Tsunami</b></h4>
+        <h4 style="padding-top: 10px; "><b>Pengertian Tsunami</b></h4>
         <div class="sinfo">
           <p> &emsp; Tsunami adalah satu dari sekian kejadian alam yang
             ditandai dengan pasangnya air laut dalam skala besar dan terjadi
@@ -150,7 +150,7 @@
 
 
   <!-- Services Section -->
-  <div class="container sinfo">
+  <div class="container sinfo" style="padding-bottom: 0px;">
     <div class="row centered">
       <h4>Menurut King (1972) dan Anhert (1996) ada tiga faktor utama yang menjadi penyebab bencana <b>tsunami</b>,
         yaitu:</h4>
@@ -158,7 +158,7 @@
       <br>
 
       <div class="col-lg-4">
-        <p><img src="img/icons/spray.svg" alt=""></p>
+        <p><img style="width: 100px;" src="img/icons/733077.png" alt=""></p>
         <p>Ada retakan yang terjadi di dasar laut dan diiringi dengan suatu gempa bumi. Retakan yang dimaksud adalah
           zona planar yang bersifat lemah dan bergerak melalui wilayah kerak bumi.</p>
         <!-- <p><button class="btn btn-primary">Read More</button></p> -->
@@ -166,7 +166,7 @@
       <!-- col-lg-3 -->
 
       <div class="col-lg-4">
-        <p><img src="img/icons/rocket.svg" alt=""></p>
+        <p><img style="width: 100px;" src="img/icons/1759504.png" alt=""></p>
         <p>Ada tanah longsor yang terjadi baik di atas lautan atau di bawah laut, kemudian longsoran tersebut menimpa
           air dengan keras.</p>
         <!-- <p><button class="btn btn-primary">Read More</button></p> -->
@@ -174,7 +174,7 @@
       <!-- col-lg-3 -->
 
       <div class="col-lg-4">
-        <p><img src="img/icons/pencil.svg" alt=""></p>
+        <p><img style="width: 100px;" src="img/icons/1788740.png" alt=""></p>
         <p>Ada aktivitas dari gunung api yang lokasinya dekat dari pantai atau memang terletak di bawah air. Gunung api
           tersebut bisa terangkat atau mengalami tekanan layaknya pergerakan pada suatu retakan.</p>
         <!-- <p><button class="btn btn-primary">Read More</button></p> -->
@@ -188,7 +188,26 @@
   </div>
   <!-- /container -->
 
+  <div class="container sinfo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 centered">
+        <h3>Berikut video penjelasan singkat mengenai tsunami</h3>
+        <div class="container-video">
+          <iframe id="video" class="responsive-iframe"
+            src="https://www.youtube.com/embed/alDDFM62lds?enablejsapi=1&controls=0&playlist=alDDFM62lds&loop=1"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+        </div>
+        <div style="float: right;">source : <a href="https://www.youtube.com/channel/UCu0yQD7NFMyLu_-TmKa4Hqg">chanel youtube Kok Bisa</a> </div>
+ 
+        
 
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- 
   <div id="g">
     <div class="container">
       <div class="row">
@@ -232,10 +251,10 @@
 
       </div>
       <!-- /row -->
-    </div>
-    <!-- /container -->
   </div>
-  <!-- grey wrap -->
+  <!-- /container -->
+  </div>
+
 
 
 
@@ -274,12 +293,58 @@
     <!-- /container -->
   </div>
 
+  <script id="rendered-js">
+    // https://developers.google.com/youtube/iframe_api_reference
+
+    // global variable for the player
+
+    var observer = new IntersectionObserver(function (entries) {
+      
+      if (entries[0].isIntersecting === true){
+        player.playVideo();
+      }
+      else{
+        player.pauseVideo();
+      }
+    }, {
+      threshold: [1]
+    });
+    setTimeout(() => {
+      observer.observe(document.querySelector(".container-video"));
+    }, 2000);
+    
+
+    var player;
+
+    // this function gets called when API is ready to use
+    function onYouTubePlayerAPIReady() {
+      // create the global player from the specific iframe (#video)
+      player = new YT.Player("video", {
+        events: {
+          // call this function when player is ready to use
+         
+        }
+      });
+    }
+
+
+
+    // Inject YouTube API script
+    var tag = document.createElement("script");
+    tag.src = "//www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName("script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    //# sourceURL=pen.js
+  </script>
+
+
   <!-- / copyrights -->
 
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="lib/php-mail-form/validate.js"></script>
+
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
