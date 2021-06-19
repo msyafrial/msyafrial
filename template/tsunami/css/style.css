@@ -13,6 +13,12 @@ body {
   text-align: center
 }
 
+.navbar-kiri{
+  float: left; 
+  margin-top:5px; 
+  margin-left: 5px  ;
+  padding-top: 20px;
+}
 .panel-default>.panel-heading {
   color: #fff;
   background-color: #1abc9c;
@@ -234,7 +240,7 @@ body {
   text-align: center;
   background-attachment: relative;
   background-position: center center;
-  min-height: 600px;
+  min-height: 500px;
   width: 100%;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
@@ -494,8 +500,8 @@ body {
 }
 
 .sinfo {
-  padding-top: 60px;
-  padding-bottom: 60px
+  padding-top: 30px;
+  padding-bottom: 30px
 }
 
 .sinfo h4 {
