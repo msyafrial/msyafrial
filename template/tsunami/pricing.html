@@ -1,418 +1,127 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-  <meta charset="utf-8">
-  <title>Good - Bootstrap Corporate Template</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+  <style>
+    #container {
+  height: 400px;
+}
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+.highcharts-figure, .highcharts-data-table table {
+  min-width: 310px;
+  max-width: 800px;
+  margin: 1em auto;
+}
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+#datatable {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+#datatable caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+#datatable th {
+	font-weight: 600;
+  padding: 0.5em;
+}
+#datatable td, #datatable th, #datatable caption {
+  padding: 0.5em;
+}
+#datatable thead tr, #datatable tr:nth-child(even) {
+  background: #f8f8f8;
+}
+#datatable tr:hover {
+  background: #f1f7ff;
+}
+  </style>
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/flat-ui/css/flat-ui.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="css/pricing-table-global.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Template Name: Good
-    Template URL: https://templatemag.com/good-bootstrap-corporate-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 
 <body>
 
-  <!-- Fixed navbar -->
-  <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        <a class="navbar-brand" href="index.html">GOOD</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a href="index.html">Home</a>
-          </li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li class="dropdown active">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="services.html">Services</a></li>
-              <li class="active"><a href="pricing.html">Pricing Tables</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li><a href="team.html">Our Team</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="blog-single.html">Blog Article</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="404.html">404</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolios <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="portfolio4.html">Portfolio 4 Columns</a></li>
-              <li><a href="project-single.html">Single Project</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-  </div>
-
-
-  <!-- Pricing intro -->
-  <div class="container sinfo">
-    <div class="row centered">
-      <div class="col-lg-10 col-lg-offset-1">
-        <h3>Pricing Lists</h3>
-
-      </div>
-
-    </div>
-  </div>
-  <!-- /pricing intro -->
-
-
-  <!-- Price Section -->
-  <!-- STYLE 1 -->
-  <div class="container">
-    <br><br>
-    <div class="row">
-      <div class="col-md-9 span-centered">
-        <div class="row">
-          <div class="col-md-4 pricing-table turquoise bordered plain">
-            <ul class="centered">
-              <li class="title">
-                Basic
-              </li>
-              <li class="price">
-                <span class="currency-symbol">$</span>
-                <strong>4</strong>
-                <sup>99</sup>
-                <em>/mo</em>
-              </li>
-              <li>
-                1 GB Diskspace
-              </li>
-              <li>
-                10 GB Bandwidth
-              </li>
-              <li>
-                1 Domain
-              </li>
-              <li>
-                3 Subdomain
-              </li>
-              <li>
-                5 Email Accounts
-              </li>
-              <li class="button">
-                <button class="btn btn-large">
-									<i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
-								</button>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 pricing-table turquoise bordered plain">
-            <ul class="centered alt">
-              <li class="title">
-                Standard
-              </li>
-              <li class="price">
-                <span class="currency-symbol">$</span>
-                <strong>19</strong>
-                <sup>99</sup>
-                <em>/mo</em>
-              </li>
-              <li>
-                25 GB Diskspace
-              </li>
-              <li>
-                500 GB Bandwidth
-              </li>
-              <li>
-                5 Domain
-              </li>
-              <li>
-                25 Subdomain
-              </li>
-              <li>
-                100 Email Accounts
-              </li>
-              <li class="button">
-                <button class="btn btn-large">
-									<i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
-								</button>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 pricing-table turquoise bordered plain">
-            <ul class="centered alt-dark">
-              <li class="title">
-                Advance
-              </li>
-              <li class="price">
-                <span class="currency-symbol">$</span>
-                <strong>49</strong>
-                <sup>99</sup>
-                <em>/mo</em>
-              </li>
-              <li>
-                100 GB Diskspace
-              </li>
-              <li>
-                <strong>Unlimited</strong> Bandwidth
-              </li>
-              <li>
-                25 Domain
-              </li>
-              <li>
-                100 Subdomain
-              </li>
-              <li>
-                500 Email Accounts
-              </li>
-              <li class="button">
-                <button class="btn btn-large">
-									<i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
-								</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br><br><br><br>
-  </div>
-
-
-
-  <!-- STYLE 2 -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 pricing-table turquoise bordered hover-animation">
-        <ul>
-          <li class="title">
-            Basic
-          </li>
-          <li class="price">
-            <span class="currency-symbol">$</span>
-            <strong>4</strong>
-            <sup>99</sup>
-            <em>/mo</em>
-          </li>
-          <li>
-            <span class="pull-right">1 GB</span>Diskspace
-          </li>
-          <li>
-            <span class="pull-right">10 GB</span>Bandwidth
-          </li>
-          <li>
-            <span class="pull-right">1</span>Domain
-          </li>
-          <li>
-            <span class="pull-right">3</span>Subdomain
-          </li>
-          <li>
-            <span class="pull-right">5</span>Email Accounts
-          </li>
-          <li class="button">
-            <button class="btn btn-large">
-							<i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
-						</button>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-3 pricing-table turquoise bordered hover-animation">
-        <ul>
-          <li class="title">
-            Standard
-          </li>
-          <li class="price">
-            <span class="currency-symbol">$</span>
-            <strong>19</strong>
-            <sup>99</sup>
-            <em>/mo</em>
-          </li>
-          <li>
-            <span class="pull-right">25 GB</span>Diskspace
-          </li>
-          <li>
-            <span class="pull-right">500 GB</span>Bandwidth
-          </li>
-          <li>
-            <span class="pull-right">5</span>Domain
-          </li>
-          <li>
-            <span class="pull-right">25</span>Subdomain
-          </li>
-          <li>
-            <span class="pull-right">100</span>Email Accounts
-          </li>
-          <li class="button">
-            <button class="btn btn-large">
-							<i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
-						</button>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-3 pricing-table turquoise bordered standout hover-animation">
-        <ul>
-          <li class="title">
-            Advance
-          </li>
-          <li class="price">
-            <span class="currency-symbol">$</span>
-            <strong>49</strong>
-            <sup>99</sup>
-            <em>/mo</em>
-          </li>
-          <li class="label">
-            Most Popular!
-          </li>
-          <li>
-            <span class="pull-right">100 GB</span>Diskspace
-          </li>
-          <li>
-            <span class="pull-right"><strong>Unlimited</strong></span>Bandwidth
-          </li>
-          <li>
-            <span class="pull-right">25</span>Domain
-          </li>
-          <li>
-            <span class="pull-right">100</span>Subdomain
-          </li>
-          <li>
-            <span class="pull-right">500</span>Email Accounts
-          </li>
-          <li class="button">
-            <button class="btn btn-large">
-							<i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
-						</button>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-3 pricing-table turquoise bordered hover-animation">
-        <ul>
-          <li class="title">
-            Professional
-          </li>
-          <li class="price">
-            <span class="currency-symbol">$</span>
-            <strong>99</strong>
-            <sup>99</sup>
-            <em>/mo</em>
-          </li>
-          <li>
-            <span class="pull-right"><i class="icon-ok"></i></span>
-            <strong>Unlimited</strong> Diskspace
-          </li>
-          <li>
-            <span class="pull-right"><i class="icon-ok"></i></span>
-            <strong>Unlimited</strong> Bandwidth
-          </li>
-          <li>
-            <span class="pull-right"><i class="icon-ok"></i></span>
-            <strong>Unlimited</strong> Domain
-          </li>
-          <li>
-            <span class="pull-right"><i class="icon-ok"></i></span>
-            <strong>Unlimited</strong> Subdomain
-          </li>
-          <li>
-            <span class="pull-right"><i class="icon-ok"></i></span>
-            <strong>Unlimited</strong> Email Accounts
-          </li>
-          <li class="button">
-            <button class="btn btn-large">
-							<i class="icon-shopping-cart"></i>&nbsp;&nbsp;Sign Up
-						</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <br><br><br><br>
-  </div>
-
-
-
-
-  <!-- FOOTER -->
-  <div id="f">
-    <div class="container">
-      <div class="row">
-        <h5 class="centered">Contact Information</h5>
-        <br>
-
-        <div class="col-lg-4">
-          <p>ABOUT <b>GOOD</b> STUDIO</p>
-          <p><small>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</small></p>
-        </div>
-
-        <div class="col-lg-4">
-          <p>MAIN OFFICE</p>
-          <p><small>
-						Richardson Ave. 984<br/>
-						London, UK.<br/>
-						+44 3893-4904
-					</small></p>
-        </div>
-
-        <div class="col-lg-4">
-          <p>OUR NEWSLETTER</p>
-          <p><small>Each month we collect the best stuff around the design world and share it with you.</small></p>
-          <p><input type="text" placeholder="Add your email here" class="form-control flat" /></p>
-        </div>
-
-      </div>
-      <!-- /row -->
-    </div>
-    <!-- /container -->
-  </div>
-  <!-- /Footer -->
-
-  <div id="copyrights">
-    <div class="container">
-      <p>
-        &copy; Copyrights <strong>Good</strong>. All Rights Reserved
-      </p>
-      <div class="credits">
-        <!--
-          You are NOT allowed to delete the credit link to TemplateMag with free version.
-          You can delete the credit link only if you bought the pro version.
-          Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/good-bootstrap-corporate-template/
-          Licensing information: https://templatemag.com/license/
-        -->
-        Created with Good template by <a href="https://templatemag.com/">TemplateMag</a>
-      </div>
-    </div>
-  </div>
-  <!-- / copyrights -->
-
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/php-mail-form/validate.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
-
+  
+  
+  <figure class="highcharts-figure">
+    <div id="chart"></div>
+    <p class="highcharts-description">
+      Chart showing how an HTML table can be used as the data source for the
+      chart using the Highcharts data module. The chart is built by
+      referencing the existing HTML data table in the page. Several common
+      data source types are available, including CSV and Google Spreadsheet.
+    </p>
+  
+    <table id="datatable">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Jane</th>
+          <th>John</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Apples</th>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <th>Pears</th>
+          <td>2</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>Plums</th>
+          <td>5</td>
+          <td>11</td>
+        </tr>
+        <tr>
+          <th>Bananas</th>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>Oranges</th>
+          <td>2</td>
+          <td>4</td>
+        </tr>
+      </tbody>
+    </table>
+  </figure>
+  <script>
+    Highcharts.chart('chart', {
+  data: {
+    table: 'datatable'
+  },
+  chart: {
+    type: 'column'
+  },
+  title: {
+    text: 'Data extracted from a HTML table in the page'
+  },
+  yAxis: {
+    allowDecimals: false,
+    title: {
+      text: 'Units'
+    }
+  },
+  tooltip: {
+    formatter: function () {
+      return '<b>' + this.series.name + '</b><br/>' +
+        this.point.y + ' ' + this.point.name.toLowerCase();
+    }
+  }
+});
+  </script>
 </body>
 </html>
