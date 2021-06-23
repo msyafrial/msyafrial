@@ -214,7 +214,7 @@
                 </div>
 
                 <div class="col-lg-12">
-                    <div class="card " style="max-height: 500px;>
+                    <div class="card ">
                         <div class="card-body" >
                             <div>
                                 <div>
@@ -231,7 +231,7 @@
                                     <h3 style="float: right; margin-top: 15px;  font-size: 20px;"><b>Download</b></h3>
                                 </div>
                             </div>
-                            <div id="dvTable" class="table-responsive" ></div>
+                            <div id="dvTable" class="table-responsive" style="max-height: 500px; overflow-y: scroll;" ></div>
                         </div>
                     </div>
                 </div>
@@ -726,68 +726,7 @@
         });
     </script>
 
-    <script>
-        Highcharts.setOptions({
-            colors: ['#1e81b0']
-        });
-
-        const chart_validitas = new Highcharts.Chart({
-            data: {
-                // table: 'datatable'
-                csvURL: './Validitas.csv'
-            },
-            chart: {
-                renderTo: 'chart-validitas',
-                type: 'bar',
-                options3d: {
-                    enabled: true,
-                    alpha: 10,
-                    beta: 0,
-                    depth: 100,
-                    viewDistance: 25
-                },
-                style: {
-                    fontFamily: 'Lato,Helvetica,Arial,sans-serif'
-                }
-
-            },
-            legend: {
-                enabled: false
-            },
-            credits: {
-                enabled: false
-            },
-            title: {
-                style: {
-
-                    fontWeight: 'bold',
-                    fontSize: '20px'
-
-                },
-                text: 'Validitas Data Kejadian Tsunami'
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Jumlah Validitas',
-                    align: 'high'
-                },
-                labels: {
-                    overflow: 'justify'
-                }
-            },
-
-            plotOptions: {
-                series: {
-                    borderWidth: 0,
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.y}'
-                    }
-                }
-            }
-        });
-    </script>
+   
 
     <script>
         Highcharts.setOptions({
@@ -856,71 +795,7 @@
 
         });
     </script>
-    <script>
-        Highcharts.setOptions({
-            colors: ['#1e81b0', '#ffc107']
-        });
-
-        Highcharts.chart('chart-bukti', {
-            chart: {
-                type: 'pie',
-                options3d: {
-                    enabled: true,
-                    alpha: 45,
-                    beta: 0
-                },
-                style: {
-                    fontFamily: 'Lato,Helvetica,Arial,sans-serif'
-                }
-            },
-            title: {
-                style: {
-
-                    fontWeight: 'bold',
-                    fontSize: '20px'
-
-                },
-                text: 'Bukti Alam'
-            },
-            credits: {
-                enabled: false
-            },
-            accessibility: {
-                point: {
-                    valueSuffix: '%'
-                }
-            },
-            tooltip: {
-                pointFormat: '{point.name}: <b>{point.y}</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    depth: 35,
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.name}<br> ({point.y})'
-                    }
-                }
-            },
-            series: [{
-                type: 'pie',
-                name: 'Browser share',
-                data: [
-                    ['Primer', 94],
-
-                    {
-                        name: 'Secunder',
-                        y: 207,
-                        sliced: true,
-                        selected: true
-                    }
-                ]
-            }]
-        });
-    </script>
-
+  
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/php-mail-form/validate.js"></script>
