@@ -30,12 +30,59 @@
   <script src="js/leaflet.ajax.js" type="text/javascript"></script>
   <script src="js/Leaflet.Coordinates-0.1.5.min.js" type="text/javascript"></script>
   <script src="js/leaflet.zoomhome.js" type="text/javascript"></script>
+  <!--geolocation-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8">
+  </script>
+  <link rel="stylesheet" href="css/leaflet.zoomhome.css" />
+  <link rel="stylesheet" href="css/Leaflet.Coordinates-0.1.5.css" />
   <!-- =======================================================
     Template Name: Good
     Template URL: https://templatemag.com/good-bootstrap-corporate-template/
     Author: TemplateMag.com
     License: https://templatemag.com/license/
   ======================================================= -->
+  <style>
+    /*Legend specific*/
+    .legend {
+      z-index: 600!important;
+      margin-top: 85px !important;
+      padding: 6px 8px;
+      font: 14px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255, 255, 255, 0.8);
+      /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+      /*border-radius: 5px;*/
+      line-height: 24px;
+      color: #555;
+    }
+
+    .legend h4 {
+      text-align: center;
+      font-size: 16px;
+      margin: 2px 12px 8px;
+      color: #777;
+    }
+
+    .legend span {
+      position: relative;
+      bottom: 3px;
+    }
+
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin: 0 8px 0 0;
+      opacity: 0.7;
+    }
+
+    .legend i.icon {
+      background-size: 18px;
+      /* background-color: rgba(255, 255, 255, 1); */
+    }
+  </style>
 </head>
 
 <body>
@@ -65,127 +112,15 @@
           <li><a href="#">Mitigasi</a></li>
           <li class="active"><a href="peta.html">Peta</a></li>
           <li><a href="statistik.html">Data</a></li>
-          <!-- <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="services.html">Services</a></li>
-              <li><a href="pricing.html">Pricing Tables</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li><a href="team.html">Our Team</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="blog-single.html">Blog Article</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="404.html">404</a></li>
-            </ul>
-          </li>
-          <li class="dropdown active">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolios <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="portfolio4.html">Portfolio 4 Columns</a></li>
-              <li class="active"><a href="project-single.html">Single Project</a></li>
-            </ul>
-          </li> -->
+
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </div>
 
-
-
+  <div id="mapid" style="position: absolute; top: 0; bottom: 0; width: 100%;"></div>
   <!-- Portfolio Section -->
-  <div class="container-bs">
-    <div class="row centered">
-      <br>
-      <br>
-      <div class="col-lg-8 col-lg-offset-2">
-        <h3>PETA PERSEBARAN TSUNAMI DI INDONESIA</h3>
-        <p class="lead">persebaran histori tsunami yang pernah terjadi di indonesia</p>
-      </div>
-      <!-- col-lg-8 -->
-      <br>
-      <div class="col-lg-10 col-lg-offset-1">
-        <div id="mapid" style="height: 500px;">
-        </div>
-        <div style="float: right;">source: <a href="https://trc-ui.geosinyal.id">https://trc-ui.geosinyal.id</a></div>
-      </div>
-
-
-      <!-- <div class="col-lg-10 col-lg-offset-1" style="padding: 10px; margin-top: 10 px;" >
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/NC5ne2wJ78g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div> -->
-      <!-- col-lg-10 -->
-    </div>
-
-    <!-- row -->
-  </div>
-  <!-- container-bs -->
-
-  <div class="container-bs">
-    <div class="row sinfo">
-      <div class="col-lg-3 col-lg-offset-1">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.</p>
-
-      </div>
-      <!-- col-lg-3 -->
-
-      <div class="col-lg-3">
-        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-          unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-          passages.</p>
-      </div>
-
-      <!-- <div class="col-lg-4">
-        <h6>Warren Design</h6>
-        <p>
-          Date: Oct 20, 2013 <br/> Work: Web Design & Development <br/> Leader: Brad Frost<br/><br/>
-          <button class="btn btn-primary">Visit Site</button>
-
-        </p> -->
-    </div>
-  </div>
-  <!-- row -->
-  </div>
-  <!-- container-bs -->
-
-
-  <!-- FOOTER -->
-  <div id="f">
-    <div class="container-bs">
-      <div class="row">
-        <h5 class="centered">Contact Information</h5>
-        <br>
-
-        <div class="col-lg-4">
-          <p>ABOUT <b>AL</b> STUDIO</p>
-          <p><small>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-              alteration in some form, by injected humour, or randomised words which don't look even slightly
-              believable.</small></p>
-        </div>
-
-        <div class="col-lg-4">
-          <p>MAIN OFFICE</p>
-          <p><small>
-              Richardson Ave. 984<br />
-              London, UK.<br />
-              +44 3893-4904
-            </small></p>
-        </div>
-
-        <div class="col-lg-4">
-          <p>OUR NEWSLETTER</p>
-          <p><small>Each month we collect the best stuff around the design world and share it with you.</small></p>
-          <p><input type="text" placeholder="Add your email here" class="form-control flat" /></p>
-        </div>
-
-      </div>
-      <!-- /row -->
-    </div>
-    <!-- /container-bs -->
-  </div>
   <!-- /Footer -->
 
 
@@ -194,7 +129,7 @@
     // menampilkan peta
     var mymap = L.map('mapid', {
       zoomControl: false,
-      center: [-0.99, 118.93],
+      center: [0.99, 118.93],
       zoom: 5,
 
     });
@@ -244,6 +179,48 @@
     }).addTo(mymap);
 
     var popup = L.popup();
+
+
+    var zoomHome = new L.Control.zoomHome({
+      position: "bottomleft"
+    });
+    zoomHome.addTo(mymap);
+
+    L.control.locate({
+      position: "bottomleft"
+    }).addTo(mymap);
+
+
+    L.control.coordinates({
+      position: "bottomright",
+      decimals: 2,
+      decimalSeperator: ",",
+      labelTemplateLat: "Latitude: {y}",
+      labelTemplateLng: "Longitude: {x}"
+    }).addTo(mymap);
+
+
+    var legend = L.control({
+      position: "topright"
+    });
+
+    legend.onAdd = function (map) {
+      var div = L.DomUtil.create("div", "legend");
+      div.innerHTML += "<h4>Legenda</h4>";
+      div.innerHTML += '<i style="background: #477AC2"></i><span>Air</span><br>';
+      div.innerHTML += '<i style="background: #448D40"></i><span>Hutan</span><br>';
+      div.innerHTML += '<i style="background: #E6E696"></i><span>Daratan</span><br>';
+      // div.innerHTML += '<i style="background: #E8E6E0"></i><span>Residential</span><br>';
+      // div.innerHTML += '<i style="background: #FFFFFF"></i><span>Ice</span><br>';
+      div.innerHTML +=
+        '<i class="icon" style="background-image: url(./img/icons/Tsunami.png);background-repeat: no-repeat;"></i><span>Area Tsunami</span><br>';
+
+
+
+      return div;
+    };
+
+    legend.addTo(mymap);
   </script>
 
 
@@ -254,6 +231,8 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  <!--My Script-->
 
 </body>
 
