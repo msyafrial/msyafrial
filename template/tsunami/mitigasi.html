@@ -17,16 +17,9 @@
   <!-- Bootstrap CSS File -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
-
-  </style>
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+
 
   <!-- =======================================================
       Template Name: AL
@@ -191,48 +184,7 @@
     </div>
   </div>
 
-  <script id="rendered-js">
-    // https://developers.google.com/youtube/iframe_api_reference
-
-    // global variable for the player
-
-    var observer = new IntersectionObserver(function (entries) {
-
-      if (entries[0].isIntersecting === true) {
-        player.playVideo();
-      } else {
-        player.pauseVideo();
-      }
-    }, {
-      threshold: [1]
-    });
-    setTimeout(() => {
-      observer.observe(document.querySelector(".container-video"));
-    }, 2000);
-
-
-    var player;
-
-    // this function gets called when API is ready to use
-    function onYouTubePlayerAPIReady() {
-      // create the global player from the specific iframe (#video)
-      player = new YT.Player("video", {
-        events: {
-          // call this function when player is ready to use
-
-        }
-      });
-    }
-
-
-
-    // Inject YouTube API script
-    var tag = document.createElement("script");
-    tag.src = "//www.youtube.com/player_api";
-    var firstScriptTag = document.getElementsByTagName("script")[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    //# sourceURL=pen.js
-  </script>
+ 
 
 
   <!-- / copyrights -->
