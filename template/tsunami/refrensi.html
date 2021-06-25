@@ -58,7 +58,7 @@
     <link href="lib/flat-ui/css/flat-ui.css" rel="stylesheet">
     <!-- Bootstrap CSS File -->
 
-    <script src="./js/data.js"></script>
+    <script src="./js/refrensi.js"></script>
 
     <style>
         #container {
@@ -140,8 +140,8 @@
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li class="active"><a href="statistik.html">Statistik</a></li>
-                          <li><a href="refrensi.html">Refrensi</a></li>
+                          <li ><a href="statistik.html">Statistik</a></li>
+                          <li class="active"><a href="refrensi.html">Refrensi</a></li>
                         </ul>
                       </li>
 
@@ -174,50 +174,6 @@
     <div class="page-body">
         <div class="container-xl" style="max-width: 100%;">
             <div class="row row-deck row-cards">
-                <div class="col-lg-4">
-                    <div class="row row-cards">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body" style="padding-left: 0px;">
-
-                                    <div id="chart-kejadian" class="chart-lg"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 ">
-                    <div class="card">
-                        <div class="card-body" style="text-align: center">
-                            <div class="">
-                                <div>
-                                    <h4><b> Total Data Tsunami</b></h4>
-                                </div>
-                                <div class="ms-auto lh-1">
-
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="h1 mb-3" style="font-size: 100px;">301</div>
-                            <div class="d-flex mb-2">
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="row row-cards">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body" style="padding-left: 0px;">
-                                    <div id="chart-tsunami" class="chart-lg"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="col-lg-12">
                     <div class="card ">
@@ -225,13 +181,13 @@
                             <div>
                                 
                                 <div>
-                                    <h4 style="text-align: center;"><b>Tabel Kejadian Tsunami </b> </h4>
+                                    <h4 style="text-align: center;"><b>Refrensi</b> </h4>
                                 </div>
                            
 
                                 <div style="  width: 50px !important; 
                                 float: right; 
-                                margin-right: 20px;"><a href="./data/Data Tsunami Indonesia_Kelompok 5.xlsx"><img src="./img/icons/download2.png"
+                                margin-right: 20px;"><a href="./data/Refrensi_Kelompok 5.xlsx"><img src="./img/icons/download2.png"
                                             alt="download"></a>
                                 </div>
                                 <a href="./data/Data Tsunami Indonesia_Kelompok 5.xlsx">
@@ -261,7 +217,7 @@
     <div id="f">
         <div class="container-bs">
             <div class="row">
-               
+              
                 <br>
 
                 <div class="col-lg-4">
@@ -298,7 +254,7 @@
         function GenerateTable() {
             //Build an array containing Customer records.
 
-            // var newurl = "https://trc-ui.geosinyal.id/geojson/layer_data/databasetsunami.geojson"
+            var newurl = "https://trc-ui.geosinyal.id/geojson/layer_data/databasetsunami.geojson"
            
             // customers.push(["Id", "Name", "Country", "Customer Id", "Name", "Country"]);
             // customers.push([1, "John Hammond", "United States"]);
@@ -365,138 +321,7 @@
 
     <!-- Tabler Core -->
     <script src="./js/tabler.min.js?1620587987"></script>
-    <script>
-        Highcharts.setOptions({
-            colors: ['#ffc107']
-        });
-
-        const chart_tsunami = new Highcharts.Chart({
-            data: {
-                // table: 'datatable'
-                csvURL: './KejadianTsunami.csv'
-            },
-            chart: {
-                renderTo: 'chart-tsunami',
-                type: 'bar',
-                options3d: {
-                    enabled: true,
-                    alpha: 10,
-                    beta: 0,
-                    depth: 100,
-                    viewDistance: 25,
-                },
-                style: {
-                    fontFamily: 'Lato,Helvetica,Arial,sans-serif'
-                }
-
-            },
-            legend: {
-                enabled: false
-            },
-            credits: {
-                enabled: false
-            },
-            title: {
-                style: {
-
-                    fontWeight: 'bold',
-                    fontSize: '20px'
-
-                },
-                text: 'Penyebab Tsunami di Indonesia'
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Jumlah Kejadian',
-                    align: 'high'
-                },
-                labels: {
-                    overflow: 'justify'
-                }
-            },
-
-            plotOptions: {
-                series: {
-                    borderWidth: 0,
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.y}'
-                    }
-                }
-            }
-        });
-    </script>
-
    
-
-    <script>
-        Highcharts.setOptions({
-            colors: ['#1e81b0', '#ffc107']
-        });
-
-        Highcharts.chart('chart-kejadian', {
-            chart: {
-                type: 'pie',
-                options3d: {
-                    enabled: true,
-                    alpha: 45,
-                    beta: 0
-                },
-                style: {
-                    fontFamily: 'Lato,Helvetica,Arial,sans-serif'
-                }
-
-            },
-            title: {
-                style: {
-
-                    fontWeight: 'bold',
-                    fontSize: '20px'
-
-                },
-                text: 'Waktu Kejadian'
-            },
-            credits: {
-                enabled: false
-            },
-            accessibility: {
-                point: {
-                    valueSuffix: '%'
-                }
-            },
-            tooltip: {
-
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    depth: 35,
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.name}<br> ({point.y})'
-                    }
-                }
-            },
-            series: [{
-                type: 'pie',
-                name: 'Browser share',
-                data: [
-                    ['Prehistorical', 37],
-
-                    {
-                        name: 'historal',
-                        y: 264,
-                        sliced: true,
-                        selected: true
-                    }
-                ]
-            }],
-
-        });
-    </script>
   
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>

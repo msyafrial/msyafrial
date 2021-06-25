@@ -3218,7 +3218,7 @@ fieldset:disabled .btn {
     white-space: nowrap
 }
 
-.dropdown-toggle:after {
+.dropdown-toggle-tb:after {
     content: "";
     display: inline-block;
     vertical-align: .306em;
@@ -3379,7 +3379,7 @@ fieldset:disabled .btn {
     margin-bottom: 1px
 }
 
-.dropup .dropdown-toggle:after {
+.dropup .dropdown-toggle-tb:after {
     content: "";
     display: inline-block;
     vertical-align: .306em;
@@ -3403,7 +3403,7 @@ fieldset:disabled .btn {
     margin-left: 1px
 }
 
-.dropend .dropdown-toggle:after {
+.dropend .dropdown-toggle-tb:after {
     content: "";
     display: inline-block;
     vertical-align: .306em;
@@ -3431,7 +3431,7 @@ fieldset:disabled .btn {
     margin-right: 1px
 }
 
-.dropstart .dropdown-toggle:after {
+.dropstart .dropdown-toggle-tb:after {
     content: "";
     display: inline-block;
     vertical-align: .306em;
@@ -11594,7 +11594,7 @@ body :hover::-webkit-scrollbar-thumb {
         padding-left: 6.25rem
     }
 
-    .navbar-expand-sm .navbar-collapse-tb .dropdown-toggle:after {
+    .navbar-expand-sm .navbar-collapse-tb .dropdown-toggle-tb:after {
         margin-left: auto
     }
 
@@ -11706,7 +11706,7 @@ body :hover::-webkit-scrollbar-thumb {
         padding-left: 6.25rem
     }
 
-    .navbar-expand-md .navbar-collapse-tb .dropdown-toggle:after {
+    .navbar-expand-md .navbar-collapse-tb .dropdown-toggle-tb:after {
         margin-left: auto
     }
 
@@ -11818,7 +11818,7 @@ body :hover::-webkit-scrollbar-thumb {
         padding-left: 6.25rem
     }
 
-    .navbar-expand-lg .navbar-collapse-tb .dropdown-toggle:after {
+    .navbar-expand-lg .navbar-collapse-tb .dropdown-toggle-tb:after {
         margin-left: auto
     }
 
@@ -11930,7 +11930,7 @@ body :hover::-webkit-scrollbar-thumb {
         padding-left: 6.25rem
     }
 
-    .navbar-expand-xl .navbar-collapse-tb .dropdown-toggle:after {
+    .navbar-expand-xl .navbar-collapse-tb .dropdown-toggle-tb:after {
         margin-left: auto
     }
 
@@ -12042,7 +12042,7 @@ body :hover::-webkit-scrollbar-thumb {
         padding-left: 6.25rem
     }
 
-    .navbar-expand-xxl .navbar-collapse-tb .dropdown-toggle:after {
+    .navbar-expand-xxl .navbar-collapse-tb .dropdown-toggle-tb:after {
         margin-left: auto
     }
 
@@ -12153,7 +12153,7 @@ body :hover::-webkit-scrollbar-thumb {
     padding-left: 6.25rem
 }
 
-.navbar-expand .navbar-collapse-tb .dropdown-toggle:after {
+.navbar-expand .navbar-collapse-tb .dropdown-toggle-tb:after {
     margin-left: auto
 }
 
@@ -12542,7 +12542,7 @@ body :hover::-webkit-scrollbar-thumb {
         padding-left: 6.25rem
     }
 
-    .navbar-vertical.navbar-expand-sm .navbar-collapse-tb .dropdown-toggle:after {
+    .navbar-vertical.navbar-expand-sm .navbar-collapse-tb .dropdown-toggle-tb:after {
         margin-left: auto
     }
 
@@ -12663,7 +12663,7 @@ body :hover::-webkit-scrollbar-thumb {
         padding-left: 6.25rem
     }
 
-    .navbar-vertical.navbar-expand-md .navbar-collapse-tb .dropdown-toggle:after {
+    .navbar-vertical.navbar-expand-md .navbar-collapse-tb .dropdown-toggle-tb:after {
         margin-left: auto
     }
 
@@ -12784,7 +12784,7 @@ body :hover::-webkit-scrollbar-thumb {
         padding-left: 6.25rem
     }
 
-    .navbar-vertical.navbar-expand-lg .navbar-collapse-tb .dropdown-toggle:after {
+    .navbar-vertical.navbar-expand-lg .navbar-collapse-tb .dropdown-toggle-tb:after {
         margin-left: auto
     }
 
@@ -12905,7 +12905,7 @@ body :hover::-webkit-scrollbar-thumb {
         padding-left: 6.25rem
     }
 
-    .navbar-vertical.navbar-expand-xl .navbar-collapse-tb .dropdown-toggle:after {
+    .navbar-vertical.navbar-expand-xl .navbar-collapse-tb .dropdown-toggle-tb:after {
         margin-left: auto
     }
 
@@ -13026,7 +13026,7 @@ body :hover::-webkit-scrollbar-thumb {
         padding-left: 6.25rem
     }
 
-    .navbar-vertical.navbar-expand-xxl .navbar-collapse-tb .dropdown-toggle:after {
+    .navbar-vertical.navbar-expand-xxl .navbar-collapse-tb .dropdown-toggle-tb:after {
         margin-left: auto
     }
 
@@ -13146,7 +13146,7 @@ body :hover::-webkit-scrollbar-thumb {
     padding-left: 6.25rem
 }
 
-.navbar-vertical.navbar-expand .navbar-collapse-tb .dropdown-toggle:after {
+.navbar-vertical.navbar-expand .navbar-collapse-tb .dropdown-toggle-tb:after {
     margin-left: auto
 }
 
@@ -15067,7 +15067,7 @@ a.card-title:hover {
     margin-left: -.25rem
 }
 
-.dropend .dropdown-toggle:after {
+.dropend .dropdown-toggle-tb:after {
     margin-left: auto
 }
 
