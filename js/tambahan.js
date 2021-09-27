@@ -70,26 +70,26 @@ async function handleSubmit(event) {
   if (name.value == "" ||name.value == null) {
     status.innerHTML = "Please provide a valid name"
     status.style.display = 'block';
-    // loader.style.display = 'none';
-    // submit.style.display = 'block'; 
+    loader.style.display = 'none';
+    submit.style.display = 'block'; 
 
   } else if (email.value == ""||email.value == null) {
     status.innerHTML = "Please enter your email"
     status.style.display = 'block';
-    // loader.style.display = 'none';
-    // submit.style.display = 'block';
+    loader.style.display = 'none';
+    submit.style.display = 'block';
 
   } else if (subject.value == ""||subject.value == null) {
     status.innerHTML = "Please enter your subject"
     status.style.display = 'block';
-    // loader.style.display = 'none';
-    // submit.style.display = 'block';
+    loader.style.display = 'none';
+    submit.style.display = 'block';
 
   } else if (message.value == ""||message.value == null) {
     status.innerHTML = "Please enter your message"
     status.style.display = 'block';
-    // loader.style.display = 'none';
-    // submit.style.display = 'block';
+    loader.style.display = 'none';
+    submit.style.display = 'block';
 
   } else {
     var data = new FormData(event.target);
@@ -100,26 +100,27 @@ async function handleSubmit(event) {
         'Accept': 'application/json'
       }
     }).then(response => {
-      console.log(response.status)
+      // console.log(response.status)
       if (response.status == 400) {
 
-      }
-      if (response.status == 200) {
+      }else if (response.status == 200) {
         openSuksesModal();
       }
-
-      status.style.display = 'block';
+      else{
+        status.innerHTML = 'Error';
+        status.style.display = 'block';
+      }
       form.reset();
-
+      submit.style.display = 'block';
+      loader.style.display = 'none';
 
     }).catch(error => {
       closeSuksesModal()
-      status.innerHTML = error
+      status.innerHTML = error;
       status.style.display = 'block';
       // status.innerHTML = "Oops! There was a problem submitting your form"
     });
   }
-  submit.style.display = 'block';
-  loader.style.display = 'none';
+
 }
 form.addEventListener("submit", handleSubmit)
