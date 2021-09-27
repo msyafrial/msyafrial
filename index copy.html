@@ -39,8 +39,7 @@
     =============================================== -->
     <link href="./css/styles.css?83aefabad72e0477dff7" rel="stylesheet">
     <link href="./css/tambahan.css" rel="stylesheet">
-    <script data-ad-client="ca-pub-1937634876535921" async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script data-ad-client="ca-pub-1937634876535921" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body id="backcontent">
@@ -662,59 +661,58 @@
     <!-- CONTACT -->
     <section id="contact" class="bg-section section__form">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title__heading" data-num="contact">
-                        <h2>contact us</h2>
-                        <p>Let's turn your idea into greater product.</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title__heading" data-num="contact">
+                            <h2>contact us</h2>
+                            <p>Let's turn your idea into greater product.</p>
 
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-12 col-lg-4 my-auto">
-                    <h4>Get in touch</h4>
-                    <p>For business inquiry please send email to
-                        <a href="mailto:syafrial.iot@gmail.com">syafrial.iot@gmail.com</a>
+                    <div class="col-md-12 col-lg-4 my-auto">
+                        <h4>Get in touch</h4>
+                        <p>For business inquiry please send email to
+                            <a href="mailto:syafrial.iot@gmail.com">syafrial.iot@gmail.com</a>
 
-                    </p>
-                    <img class="img-preview" src="./images/whatsapp.png">
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fa fa-dribbble"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fa fa-youtube"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://api.whatsapp.com/send?phone=+6283819510439">
-                                <i class="fa fa-whatsapp"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <h4>address</h4>
-                    <p>Cijantung, Jakarta Timur, Jakarta-Indonesia
-                    </p>
-                </div>
-                <div class="col-md-12 col-lg-8">
-                    <form action="https://formspree.io/f/mnqlwenn" method="POST">
+                        </p>
+                        <img class="img-preview" src="./images/whatsapp.png">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fa fa-dribbble"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://api.whatsapp.com/send?phone=+6283819510439">
+                                    <i class="fa fa-whatsapp"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <h4>address</h4>
+                        <p>Cijantung, Jakarta Timur, Jakarta-Indonesia
+                        </p>
+                    </div>
+                    <div class="col-md-12 col-lg-8">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -740,18 +738,17 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Your message</label>
-                                    <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+                                    <textarea id="message" name="message" class="form-control"
+                                        rows="4"></textarea>
                                 </div>
                             </div>
-
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-lg">
+                        <button onclick="sendemail()" type="submit" class="btn btn-primary btn-lg">
                             <i class="fa fa-paper-plane"></i>
                             Submit</button>
-                    </form>
+                    </div>
                 </div>
-            </div>
         </div>
     </section>
     <div class="clearfix"></div>
@@ -796,14 +793,11 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VRK12EN2C"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-6VRK12EN2C');
+    gtag('config', 'G-6VRK12EN2C');
     </script>
 </body>
 
