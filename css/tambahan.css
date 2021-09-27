@@ -1,19 +1,22 @@
 .modal-content {
-    background: rgba(255, 255, 255, 0.027);
+    /* background: rgba(255, 255, 255, 0.027); */
+    background: #444444a3;
     position: relative;
     margin: 10% auto;
-    margin-top: 100px;
+    margin-top: 110px;
     width: 70%;
     max-width: 512px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
     animation-name: modalopen;
     animation-duration: 1s;
     filter: alpha(opacity=100) !important;
+    border-radius: 10px;
 }
 
 
 .img-avatar {
     border-radius: 50%;
+    pointer-events: none;
 }
 
 .img-profile {
@@ -24,6 +27,8 @@
     width: auto;
     height: auto;
     aspect-ratio: 1/1;
+    border-radius: 5px;
+    pointer-events: none;
 }
 
 .img-preview {
@@ -33,6 +38,7 @@
     height: auto;
     align-self: center;
     /* aspect-ratio: 1/1; */
+    pointer-events: none;
 }
 
 .modal-header h5,
@@ -50,22 +56,31 @@
 }
 
 .modal-body {
+    margin: 5%;
     padding: 10px 20px;
-    background: #fff;
+    background: #ffc31df0;
+    border-radius: 5px;
 }
 
 .modal-footer {
-    background: #428bca;
+    background: #ffc31df0;
     padding: 10px;
     color: #fff;
     text-align: center;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     align-items: center;
     justify-content: center;
 }
 
 .close-modal {
+    align-items: right;
+    margin-right: 20px;
+    float: right;
+    font-size: 40px;
+    color: #fff;
+}
+.close-suksesmodal {
     align-items: right;
     margin-right: 20px;
     float: right;
@@ -89,3 +104,34 @@
         opacity: 1;
     }
 }
+
+.status-sukses{
+    color:rgb(255, 72, 0);
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    display: none;
+}
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #ffc31d;
+    margin-left: 50px;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    display: none;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

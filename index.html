@@ -547,7 +547,36 @@
             <div class="modal-footer">
             </div>
         </div> -->
+    </div>
 
+    <div id="sukses-modal" class="modal">
+        <div class="modal-content">
+            <div>
+                <span class="button close-suksesmodal">&times;</span>
+            </div>
+                <div class="modal-body">
+                    <h5>Terima kasih telah menghubungi kami</h5>
+                    <br>
+                    <p>kami akan segera membalas pesan anda melalui email yang telah anda berikan :)</p>
+                </div>
+                <div class="modal-footer">
+                </div>
+        </div>
+
+        <!-- <div class="modal-content">
+            
+
+            <div class="modal-body">
+                <p>This is my modal</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus nisi, sunt consectetur
+                    ipsa velit
+                    repudiandae aperiam modi quisquam nihil nam asperiores doloremque mollitia dolor deleniti quibusdam
+                    nemo
+                    commodi ab.</p>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div> -->
     </div>
 
     <!--SERVICE -->
@@ -570,7 +599,8 @@
                             </div>
                             <div class="service__box-desc">
                                 <h5>Creative Idea</h5>
-                                <p>I communicate what I struggle to make all crystal clear. I can communicate my ideas
+                                <p>I communicate what I struggle to make all crystal clear. I can communicate my
+                                    ideas
                                     well, proven by my
                                     videos.</p>
                             </div>
@@ -585,7 +615,8 @@
                             </div>
                             <div class="service__box-desc">
                                 <h5>Collaborative​</h5>
-                                <p>I can work within a team, collaborate well with developers because I’m frontend-end
+                                <p>I can work within a team, collaborate well with developers because I’m
+                                    frontend-end
                                     myself, and I love feedbacks.</p>
                             </div>
                         </div>
@@ -599,7 +630,8 @@
                             </div>
                             <div class="service__box-desc">
                                 <h5>Management Freak</h5>
-                                <p>In Retenvi.com, I manage the whole process from acquiring clients, project timeline,
+                                <p>In Retenvi.com, I manage the whole process from acquiring clients, project
+                                    timeline,
                                     until product delivery, and from zero to hero</p>
                             </div>
                         </div>
@@ -613,7 +645,8 @@
                             </div>
                             <div class="service__box-desc">
                                 <h5>Client’s Favourite</h5>
-                                <p>I’ve been freelancing for 4 years, working directly with overseas clients and all I
+                                <p>I’ve been freelancing for 4 years, working directly with overseas clients and all
+                                    I
                                     heard are positive reviews, experience is the best teacher</p>
                             </div>
                         </div>
@@ -714,7 +747,7 @@
                     </p>
                 </div>
                 <div class="col-md-12 col-lg-8">
-                    <form action="https://formspree.io/f/mnqlwenn" method="POST">
+                    <form action="https://formspree.io/f/mnqlwenn" method="POST" id="my-form">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -741,14 +774,16 @@
                                 <div class="form-group">
                                     <label>Your message</label>
                                     <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+
                                 </div>
                             </div>
-
+                            <div id="status" class="status-sukses">Mohon masukan data dengan benar</div>
                         </div>
-
-                        <button type="submit" class="btn btn-primary btn-lg">
+                        <button id="submit" type="submit" class="btn btn-primary btn-lg">
                             <i class="fa fa-paper-plane"></i>
                             Submit</button>
+                        <div id="loader" class="loader"></div>
+                       
                     </form>
                 </div>
             </div>
