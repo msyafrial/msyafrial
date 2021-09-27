@@ -16,12 +16,10 @@ if (window) {
   window.addEventListener('click', outsideClick);
 }
 if (closeBtn) {
-  closeBtn.addEventListener('click', closeModal);
-  ;
+  closeBtn.addEventListener('click', closeModal);;
 }
 if (closeSuksesBtn) {
-  closeSuksesBtn.addEventListener('click', closeSuksesModal);
-  ;
+  closeSuksesBtn.addEventListener('click', closeSuksesModal);;
 }
 
 // Open
@@ -29,7 +27,8 @@ function openModal() {
   modal.style.display = 'block';
   suksesmodal.style.display = 'none';
 }
-function openSuksesModal(){
+
+function openSuksesModal() {
   suksesmodal.style.display = 'block';
   modal.style.display = 'none';
 }
@@ -38,11 +37,12 @@ function openSuksesModal(){
 function closeModal() {
   modal.style.display = 'none';
   suksesmodal.style.display = 'none';
-  
+
 }
+
 function closeSuksesModal() {
   suksesmodal.style.display = 'none';
-  
+
 }
 
 // Close If Outside Click
@@ -58,39 +58,65 @@ function outsideClick(e) {
 
 async function handleSubmit(event) {
   event.preventDefault();
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const subject = document.getElementById("subject");
+  const message = document.getElementById("message");
   var status = document.getElementById("status");
   status.style.display = 'none';
   submit.style.display = 'none';
   loader.style.display = 'block';
 
-  var data = new FormData(event.target);
-  fetch(event.target.action, {
-    method: form.method,
-    body: data,
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    console.log(response.status)
-    if (response.status==400){
-      submit.style.display = 'block';
-      loader.style.display = 'none';
-      status.style.display = 'block';
-      form.reset();
-    } 
-    if(response.status==200){
-      openSuksesModal();
-      submit.style.display = 'block';
-      loader.style.display = 'none';
-      form.reset();
-    }
-   
+  if (name.value == "" ||name.value == null) {
+    status.style.display = 'block';
+    loader.style.display = 'none';
+    submit.style.display = 'block';
+
+  } else if (email.value == ""||email.value == null) {
+    status.style.display = 'block';
+    loader.style.display = 'none';
+    submit.style.display = 'block';
+
+  } else if (subject.value == ""||subject.value == null) {
+    status.style.display = 'block';
+    loader.style.display = 'none';
+    submit.style.display = 'block';
+
+  } else if (message.value == ""||message.value == null) {
+    status.style.display = 'block';
+    loader.style.display = 'none';
+    submit.style.display = 'block';
+
+  } else {
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      console.log(response.status)
+      if (response.status == 400) {
+        submit.style.display = 'block';
+        loader.style.display = 'none';
+        status.style.display = 'block';
+        form.reset();
+      }
+      if (response.status == 200) {
+        openSuksesModal();
+        submit.style.display = 'block';
+        loader.style.display = 'none';
+        form.reset();
+      }
 
 
-  }).catch(error => {
-    closeSuksesModal()
-    // status.innerHTML = "Oops! There was a problem submitting your form"
-  });
+
+    }).catch(error => {
+      closeSuksesModal()
+      // status.innerHTML = "Oops! There was a problem submitting your form"
+    });
+  }
 }
 form.addEventListener("submit", handleSubmit)
 //  var input_subject = document.getElementsByName("subject")[0].value
