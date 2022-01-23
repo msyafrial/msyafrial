@@ -1,0 +1,56 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+
+.speed{
+	display: none;
+}
+
+.Speed-slider{
+	position :static;
+	z-index :2;
+	width :82%;
+	height: 1rem;
+	background: rgba(234, 84, 85,0.8);
+	appearance: none;
+	border: none;
+	outline: none;
+	border-radius: 100vmax;
+	box-shadow: inset 3px 3px 5px -1px #000;
+
+}
+
+.Speed-slider::-webkit-slider-thumb{
+	appearance: none;
+	width: 30px;
+	height: 30px;
+	background: #eee;
+	border-radius :50%;
+	cursor: pointer;
+	box-shadow: 5px 5px 8px -1px #000;
+	transition: box-shadow .3s ease-in-out;
+
+}
+
+  
+.Speed-slider:hover::-webkit-slider-thumb{
+	background: #fff;
+	box-shadow: 3px 3px 5px -1px #000;
+}
+.Speed-slider::-ms-track{
+	width: 100%;
+	background: transparent; 
+	border-color: transparent;
+	color: transparent;
+}
+
+
