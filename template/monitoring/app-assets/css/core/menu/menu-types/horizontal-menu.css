@@ -20,7 +20,7 @@
   position: static; }
 
 .horizontal-menu.navbar-floating:not(.blank-page) .app-content {
-  padding-top: 9.75rem; }
+  padding-top: 5rem; }
 
 .horizontal-menu.navbar-floating .horizontal-menu-wrapper {
   background: linear-gradient(to bottom, rgba(248, 248, 248, 0.95) 44%, rgba(248, 248, 248, 0.46) 73%, rgba(255, 255, 255, 0) 100%);
