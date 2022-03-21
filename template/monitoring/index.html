@@ -366,9 +366,9 @@
                                         <div id="support-tracker-chart"></div>
                                         <div id="slideSpeed" class="speed chart-info justify-content-between mb-1">
                                             <input class="Speed-slider" id="range" type="range" , name="range" ,
-                                                value="0" , min="0" , max="100"
-                                                onmousemove="handleMouseMove(this.value)"
-                                                onchange="handleMouseMove(this.value)">
+                                                value="0" , min="0" , max="100",
+                                                onmousemove="handleMouseMove(this.value)",
+                                                onchange="handleMouseMove(this.value)", on="handleMouseMove(this.value)">
                                             <div class="series-result">
                                                 <span id="speed" >100%</span>
                                                 <!-- <i class="feather icon-arrow-up text-success"></i> -->
@@ -560,7 +560,7 @@
     <div class="drag-target"></div>
 
     <!-- BEGIN: Footer-->
-    <footer class="footer footer-static footer-dark navbar-shadow">
+    <!-- <footer class="footer footer-static footer-dark navbar-shadow">
         <p class="clearfix blue-grey lighten-2 mb-0"><span
                 class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2019<a
                     class="text-bold-800 grey darken-2" href="https://1.envato.market/pixinvent_portfolio"
@@ -570,7 +570,7 @@
             <button class="btn btn-primary btn-icon scroll-top" type="button"><i
                     class="feather icon-arrow-up"></i></button>
         </p>
-    </footer>
+    </footer> -->
     <!-- END: Footer-->
 
 

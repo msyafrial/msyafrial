@@ -334,7 +334,7 @@ $(window).on("load", function () {
 
 
     
-    var Rpm = database.ref('rpm/readRpm');
+    var Rpm = database.ref('/ESP_Send_Data/rpm/readRpm');
     Rpm.on('value', (snapshot) => {
     const data = snapshot.val();
     if(data>maxKecepatan){
@@ -348,7 +348,7 @@ $(window).on("load", function () {
    
     var counter = 0;
     var categoriesInputs = 0;
-    var speedControl = database.ref('rpm/writeRpm');
+    var speedControl = database.ref('/ESP_Receive_Data/rpm/writeRpm');
     speedControl.on('value', (snapshot) => {
             const data = snapshot.val();
             var rangeValueElement = document.getElementsByClassName("Speed-slider");
@@ -362,7 +362,7 @@ $(window).on("load", function () {
             
             revenueChart.updateOptions({
                 series: [{
-                    name: "This Month",
+                    name: "RPM",
                     data: speedMotor}],
                 xaxis: {
                 catagories: categoriesInputs
@@ -378,7 +378,7 @@ $(window).on("load", function () {
     var pw = document.getElementById('power');
     var energy = document.getElementById('energy');
 
-    var power = database.ref('power/');
+    var power = database.ref('/ESP_Send_Data/power/');
     power.on('value', (snapshot) => {
         const data = snapshot.val();
         voltage.innerHTML=data.voltage;
@@ -954,7 +954,7 @@ $(window).on("load", function () {
 function handleMouseMove(value) {
     const rangeValueElement = document.getElementById("speed")
     rangeValueElement.innerHTML = value + "%"
-    firebase.database().ref('rpm/').update({writeRpm:value});
+    firebase.database().ref('ESP_Receive_Data/rpm/').update({writeRpm:parseInt(value)});
   }
 
     // var slider1 = document.getElementById("range")
