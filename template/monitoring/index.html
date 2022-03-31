@@ -11,7 +11,9 @@
     <meta name="keywords"
         content="">
     <meta name="author" content="PIXINVENT">
+    
     <title>IoT Single Phase Motor Controller</title>
+    
     <link rel="apple-touch-icon" href="app-assets/images/logo/logo.png">
     <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -54,24 +56,6 @@
         firebase.initializeApp(config);
 
         var database = firebase.database();
-        // var db = firebase.firestore();
-        // console.log('udah')
-        // db.collection("users").add({
-        //     first: "Ada",
-        //     last: "Lovelace",
-        //     born: 1815
-        // })
-        // .then((docRef) => {
-        //     console.log("Document written with ID: ", docRef.id);
-        // })
-        // .catch((error) => {
-        //     console.error("Error adding document: ", error);
-        // });
-        
-        
-        
-        // Get a reference to the database service
-
         
     </script>
 
@@ -127,6 +111,9 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- <div class="nav navbar-nav float d-flex align-items-center">
+                        <span id="jam"  class="align-middle font-medium-2" ></span>
+                    </div> -->
                     <ul class="nav navbar-nav float-right">
                         <!-- <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link"
                                 id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true"
@@ -359,6 +346,9 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-end">
                                     <h4>Motor Speed Control</h4>
+                                    <div id="online-status" class="text-center bg-danger colors-container rounded text-white width-100 height-10 d-flex align-items-center justify-content-center mr-1 mb-50  shadow">
+                                        <span id="online-status-text"  class="align-middle font-medium-2" >Offline</span>
+                                    </div>
 
                                 </div>
                                 <div class="card-content">
