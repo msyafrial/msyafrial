@@ -30,7 +30,7 @@ $(window).on("load", function () {
 
     
 
-
+    
     
     // Support Tracker Chart
     // -----------------------------
@@ -339,10 +339,8 @@ $(window).on("load", function () {
       );
   
       tempChart.render();
-  
-
-
-
+    //   startTime();
+    
 });
 
 function handleMouseMove(value) {
@@ -369,17 +367,46 @@ function handleMouseMove(value) {
     }
     });
 
-    setInterval(function(){ 
+    setInterval(function onlineStatus(){ 
         //this code runs every second 
         var timestamp = database.ref('/time/timestamp');
         timestamp.once('value', (snapshot) => {
         const data = snapshot.val();
-        var minutesToAdd=30;
+
         var currentDate = new Date();
         var waktu = (currentDate.getTime()-data);
-        if (waktu>=30000){
-            firebase.database().ref('ESP_Send_Data/control').update({state:0});    
+        if (waktu>=5000){
+            document.getElementById("online-status").classList.replace('bg-success', 'bg-danger');
+            document.getElementById("online-status-text").textContent='Offline';
         }
+        else{
+            document.getElementById("online-status").classList.replace('bg-danger', 'bg-success');
+            document.getElementById("online-status-text").textContent='Online';
+        }
+        if (waktu>=30000){
+            firebase.database().ref('ESP_Send_Data/control').update({state:0}); 
+        }
+
+        
         //  console.log(waktu);
         });
     }, 1000);
+
+
+
+    // function startTime() {
+    //     const today = new Date();
+    //     let h = today.getHours();
+    //     let m = today.getMinutes();
+    //     let s = today.getSeconds();
+    //     m = checkTime(m);
+    //     s = checkTime(s);
+    //     document.getElementById('jam').innerHTML =  h + ":" + m + ":" + s;
+    //     setTimeout(startTime, 1000);
+    //   }
+      
+    //   function checkTime(i) {
+    //     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    //     return i;
+    //   }
+
