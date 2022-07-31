@@ -26,6 +26,7 @@ $(window).on("load", function () {
     var $label_color = '#e7eef7';
     var $purple = '#df87f2';
     var $white = '#fff';
+    var grid_line_color = '#dae1e7';
 
 
     
@@ -152,12 +153,13 @@ $(window).on("load", function () {
     var power = database.ref('/ESP_Send_Data/power/');
     power.on('value', (snapshot) => {
         const data = snapshot.val();
-        voltage.innerHTML=data.voltage;
-        current.innerHTML=data.current;
-        frequency.innerHTML=data.frequency;
-        pf.innerHTML=data.powerFactor;
-        pw.innerHTML=data.power;
-        energy.innerHTML=data.energy;
+        voltage.innerHTML=data.voltage.toFixed(1);
+        current.innerHTML=data.current.toFixed(2);
+        frequency.innerHTML=Math.round(data.frequency);
+        pf.innerHTML=data.powerFactor.toFixed(1);
+        pw.innerHTML=data.power.toFixed(1);
+        energy.innerHTML=data.energy.toFixed(2);
+
     });
 
     var maxTemp = document.getElementById('maxTemp');
@@ -170,6 +172,24 @@ $(window).on("load", function () {
         maxTemp.innerHTML=data.maxTemp;
         avgTemp.innerHTML=data.avgTemp;
         tempChart.updateSeries([temp]);
+        if (temp>80) {
+            tempChart.updateOptions({
+                colors: [$danger]
+              })
+        } 
+        else if (temp>70){
+            tempChart.updateOptions({
+                colors: [$warning]
+              })
+        }
+        else {
+            
+            tempChart.updateOptions({
+                colors: ['#00b5b5']
+            })
+        }
+
+
 
     });
 
@@ -285,7 +305,7 @@ $(window).on("load", function () {
               opacity: 0.1
           },
         },
-        colors: [$success],
+        colors: ['#00b5b5'],
         plotOptions: {
             radialBar: {
                 size: 120,
@@ -314,19 +334,20 @@ $(window).on("load", function () {
             }
         },
         fill: {
-            type: 'gradient',
-            gradient: {
-                shade: 'dark',
-                type: 'horizontal',
-                shadeIntensity: 0.5,
-                gradientToColors: ['#00b5b5'],
-                inverseColors: true,
-                opacityFrom: 1,
-                opacityTo: 1,
-                stops: [0, 100]
-            },
+            // type: 'gradient',
+            // gradient: {
+            //     shade: 'dark',
+            //     type: 'horizontal',
+            //     shadeIntensity: 0.5,
+            //     gradientToColors: ['#00b5b5'],
+            //     inverseColors: true,
+            //     opacityFrom: 1,
+            //     opacityTo: 1,
+            //     stops: [0, 50]
+            // },
+            
         },
-        series: [83],
+        series: [0],
         stroke: {
           lineCap: 'round'
         },
@@ -340,7 +361,181 @@ $(window).on("load", function () {
   
       tempChart.render();
     //   startTime();
+
     
+
+
+  // Create the chart
+ const speedgrafik= Highcharts.stockChart('container', {
+    chart: {
+        backgroundColor: 'rgba(0,0,0,0)',
+        height: 300,
+        // animation: false,
+        // marginRight:0,
+        marginLeft:30,
+        animation:{
+            duration:300
+        },
+        // spacingBottom:0,
+        // spacingTop:0,
+        // borderWidth:0,
+        //  marginTop:0,
+        // marginBottom:0,
+        events: {
+            load: function () {
+                // set up the updating of the chart each second
+                var series = this.series[0];
+                var Switch4status=false;
+                setInterval(function () {
+                if(document.getElementById('customSwitch4').checked){
+                    var readSpeed = database.ref('/ESP_Send_Data/rpm/readRpm');
+                    readSpeed.once('value', (snapshot) => {
+                        var x = (new Date()).getTime();
+                    y = parseInt(snapshot.val());
+                    series.addPoint([x, y],true,true);
+                    })
+                }
+                else{
+                    
+                }
+               }, 500);
+                
+            }
+        }
+    },
+    yAxis: {
+        labels: {
+            style: {
+                color: 'white',
+                fontSize:14
+            }
+        },
+        min: 0,
+        max: 6000,
+        startOnTick: false,
+        endOnTick: false
+      },
+    xAxis:{
+        labels: {
+            style: {
+                color: 'white',
+                fontSize:12
+            },
+        // min:new Date().getTime()-30000,
+        // max:new Date().getTime() 
+        },
+        
+
+        
+    },
+    time: {
+        useUTC: false
+    },
+  navigator: {
+            enabled: false
+        },
+        scrollbar: {
+            enabled: false
+        },
+        
+        rangeSelector: {
+        enabled: false,
+        },
+    title: {
+        display: false
+    },
+    exporting: {
+        enabled: false
+    },
+
+    series: [{
+        name: '',
+        type: 'spline',
+        // animation: {
+        //     duration: 0
+        // },
+        data: 
+        (function () {
+            // generate an array of random data
+            var data = [],			
+                time = (new Date()).getTime(),
+                i;
+
+            for (i = -100; i <= 0; i += 1) {
+                data.push([
+                    time + i * 200,
+                    0
+                    
+                ]);
+            }
+            console.log(data);
+            return data;
+        }())
+    }]
+});
+
+
+
+
+setInterval(function onlineStatus(){ 
+    //this code runs every second 
+    var timestamp = database.ref('/time/timestamp');
+    timestamp.once('value', (snapshot) => {
+    const data = snapshot.val();
+    var currentDate = new Date();
+    var waktu = (currentDate.getTime()-data);
+    if (waktu>=5000){
+        document.getElementById("online-status").classList.replace('bg-success', 'bg-danger');
+        document.getElementById("online-status-text").textContent='Offline';
+          firebase.database().ref('ESP_Send_Data').update({
+            'control/state':0,
+            'temp/temp':0,
+            'temp/maxTemp':0,
+            'temp/avgTemp':0,
+            'power/current':0,
+            'power/voltage':0,
+            'power/frequency':0,
+            'power/power':0,
+            'power/energy':0,
+            'power/powerFactor':0,
+            'rpm/readRpm':0
+          });
+
+          document.getElementById('customSwitch4').checked=false;
+          document.getElementById('customSwitch4').disabled=true;
+
+    }
+    else{
+        document.getElementById("online-status").classList.replace('bg-danger', 'bg-success');
+        document.getElementById("online-status-text").textContent='Online';
+        document.getElementById('customSwitch4').disabled=false;
+    }
+    });
+}, 1000);
+
+// document.getElementById('customSwitch4').addEventListener('change', () => {
+//     if(document.getElementById('customSwitch4').checked){
+//         speedgrafik.update({
+//         data: (function () {
+//             // generate an array of random data
+//             var data = [],			
+//                 time = (new Date()).getTime(),
+//                 i;
+
+//             for (i = -100; i <= 0; i += 1) {
+//                 data.push([
+//                     time + i * 200,
+//                     0
+                    
+//                 ]);
+//             }
+//             console.log(data);
+//             return data;
+//         }())
+//     })
+// };
+// });
+
 });
 
 function handleMouseMove(value) {
@@ -367,30 +562,7 @@ function handleMouseMove(value) {
     }
     });
 
-    setInterval(function onlineStatus(){ 
-        //this code runs every second 
-        var timestamp = database.ref('/time/timestamp');
-        timestamp.once('value', (snapshot) => {
-        const data = snapshot.val();
-
-        var currentDate = new Date();
-        var waktu = (currentDate.getTime()-data);
-        if (waktu>=5000){
-            document.getElementById("online-status").classList.replace('bg-success', 'bg-danger');
-            document.getElementById("online-status-text").textContent='Offline';
-        }
-        else{
-            document.getElementById("online-status").classList.replace('bg-danger', 'bg-success');
-            document.getElementById("online-status-text").textContent='Online';
-        }
-        if (waktu>=30000){
-            firebase.database().ref('ESP_Send_Data/control').update({state:0}); 
-        }
-
-        
-        //  console.log(waktu);
-        });
-    }, 1000);
+   
 
 
 
@@ -410,3 +582,19 @@ function handleMouseMove(value) {
     //     return i;
     //   }
 
+    // function updateBarGraph(chart, label, color, data) {
+    //     chart.data.datasets.pop();
+    //     chart.data.datasets.push({
+    //         label: label,
+    //         backgroundColor: color,
+    //         data: data
+    //     });
+    //     chart.update();
+    // }
+    // /*Updating the bar chart with updated data in every second. */
+    // setInterval(function () {
+    //       updatedDataSet = [Math.random(), Math.random(), Math.random(), Math.random()];
+    //     updateBarGraph(barChart,'Prediction', colouarray, updatedDataSet);
+    //   }, 1000);
+
+    

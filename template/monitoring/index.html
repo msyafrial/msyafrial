@@ -13,7 +13,7 @@
     <meta name="author" content="PIXINVENT">
     
     <title>IoT Single Phase Motor Controller</title>
-    
+   
     <link rel="apple-touch-icon" href="app-assets/images/logo/logo.png">
     <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -43,6 +43,16 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+    <script src="app-assets/js/scripts/cards/highstock.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <!-- <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script> -->
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+     
     <script >
     var config = {
         apiKey: "AIzaSyAtfybhdpEEgYPg4rp6CDUlTrzkI8h5UAs",
@@ -454,29 +464,34 @@
                     <div class="row">
                         <div class="col-lg-12 col-12">
                             <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Motor Speed</h4>
+                                    <div class="custom-control custom-switch custom-switch-success mr-2 mb-1">
+                                        <p class="mb-0">Run Realtime</p>
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch4" style="position: relative;margin-left: 10px;" disabled=true>
+                                        <label class="custom-control-label" for="customSwitch4"></label>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body pl-0">
+                                        <div class="height-300">
+                                            <div id="container"></div>
+                                            <!-- <canvas id="container"></canvas> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="display:none;">
+                        <div class="col-lg-12 col-12">
+                            <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-end">
                                     <h4 class="card-title">Motor Speed</h4>
-                                    <!-- <p class="font-medium-5 mb-0"><i
-                                            class="feather icon-settings text-muted cursor-pointer"></i></p> -->
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body pb-0">
                                         <div class="d-flex justify-content-start">
-                                            <!-- <div class="mr-2">
-                                                <p class="mb-50 text-bold-600">This Month</p>
-                                                <h2 class="text-bold-400">
-                                                    <sup class="font-medium-1">$</sup>
-                                                    <span class="text-success">86,589</span>
-                                                </h2>
-                                            </div> -->
-                                            <!-- <div>
-                                                <p class="mb-50 text-bold-600">Last Month</p>
-                                                <h2 class="text-bold-400">
-                                                    <sup class="font-medium-1">$</sup>
-                                                    <span>73,683</span>
-                                                </h2>
-                                            </div> -->
-
                                         </div>
                                         <div id="revenue-chart"></div>
                                     </div>
@@ -484,63 +499,13 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row">
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="card">
-                                <div class="card-header d-flex justify-content-between align-items-end">
-                                    <h4 class="mb-0">Current</h4>
-                                    <p class="font-medium-5 mb-0"><i
-                                            class="feather icon-help-circle text-muted cursor-pointer"></i></p>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-body px-0 pb-0">
-                                        <div id="current-chart" class="mb-2"></div>
-                                        <div class="row text-center mx-0">
-                                            <div
-                                                class="col-6 border-top border-right d-flex align-items-between flex-column py-1">
-                                                <p class="mb-50">Completed</p>
-                                                <p class="font-large-1 text-bold-700 mb-50">786,617</p>
-                                            </div>
-                                            <div class="col-6 border-top d-flex align-items-between flex-column py-1">
-                                                <p class="mb-50">In Progress</p>
-                                                <p class="font-large-1 text-bold-700 mb-50">13,561</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="card">
-                                <div class="card-header d-flex justify-content-between align-items-end">
-                                    <h4 class="mb-0">Frequency</h4>
-                                    <p class="font-medium-5 mb-0"><i
-                                            class="feather icon-help-circle text-muted cursor-pointer"></i></p>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-body px-0 pb-0">
-                                        <div id="frequency-chart" class="mb-2"></div>
-                                        <div class="row text-center mx-0">
-                                            <div
-                                                class="col-6 border-top border-right d-flex align-items-between flex-column py-1">
-                                                <p class="mb-50">Completed</p>
-                                                <p class="font-large-1 text-bold-700 mb-50">786,617</p>
-                                            </div>
-                                            <div class="col-6 border-top d-flex align-items-between flex-column py-1">
-                                                <p class="mb-50">In Progress</p>
-                                                <p class="font-large-1 text-bold-700 mb-50">13,561</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>  
-                    </div>    -->
+
+                
                         
                     
                 </section>
                 <!-- Analytics Card section end-->
-
+               
             </div>
         </div>
     </div>
@@ -571,6 +536,7 @@
     <!-- BEGIN: Page Vendor JS-->
     <script src="app-assets/vendors/js/ui/jquery.sticky.js"></script>
     <script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="app-assets/vendors/js/charts/chart.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
