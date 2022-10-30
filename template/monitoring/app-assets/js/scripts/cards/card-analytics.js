@@ -126,7 +126,8 @@ $(window).on("load", function () {
             var rangeValueElement = document.getElementsByClassName("Speed-slider");
             var value = document.getElementById("speed");
             rangeValueElement.range.value = data;
-            value.innerHTML = data + "%";
+            // value.innerHTML = data + "%";
+            value.innerHTML = data;
             speedMotor.splice(0,0,data);
             speedMotor.splice(200,1)
             // console.log(speedMotor)
@@ -143,24 +144,40 @@ $(window).on("load", function () {
 
         })
    
-    var voltage = document.getElementById('voltage');
-    var current = document.getElementById('current');
-    var frequency = document.getElementById('frequency');
-    var pf = document.getElementById('pf');
-    var pw = document.getElementById('power');
-    var energy = document.getElementById('energy');
+    var voltageIn = document.getElementById('voltageIn');
+    var currentIn = document.getElementById('currentIn');
+    var frequencyIn = document.getElementById('frequencyIn');
+    var pfIn = document.getElementById('pfIn');
+    var pwIn = document.getElementById('PowerIn');
+    var energyIn = document.getElementById('energyIn');
 
-    var power = database.ref('/ESP_Send_Data/power/');
-    power.on('value', (snapshot) => {
+    var powerIn = database.ref('/ESP_Send_Data/power/');
+    powerIn.on('value', (snapshot) => {
         const data = snapshot.val();
-        voltage.innerHTML=data.voltage.toFixed(1);
-        current.innerHTML=data.current.toFixed(2);
-        frequency.innerHTML=Math.round(data.frequency);
-        pf.innerHTML=data.powerFactor.toFixed(1);
-        pw.innerHTML=data.power.toFixed(1);
-        energy.innerHTML=data.energy.toFixed(2);
+        voltageIn.innerHTML=data.voltage.toFixed(1);
+        currentIn.innerHTML=data.current.toFixed(2);
+        // frequencyIn.innerHTML=Math.round(data.frequency);
+        pfIn.innerHTML=data.powerFactor.toFixed(1);
+        pwIn.innerHTML=data.power.toFixed(1);
+        // energyIn.innerHTML=data.energy.toFixed(2);
 
     });
+
+
+    var voltageOut = document.getElementById('voltageOut');
+    var currentOut = document.getElementById('currentOut');
+    var pfOut = document.getElementById('pfOut');
+    var pwOut = document.getElementById('PowerOut');
+
+    var powerOut = database.ref('/ESP8266_Send_Data/power/');
+    powerOut.on('value', (snapshot) => {
+        const data = snapshot.val();
+        voltageOut.innerHTML=data.voltage.toFixed(1);
+        currentOut.innerHTML=data.current.toFixed(2);
+        pfOut.innerHTML=data.powerFactor.toFixed(1);
+        pwOut.innerHTML=data.power.toFixed(1);
+    });
+
 
     var maxTemp = document.getElementById('maxTemp');
     var avgTemp = document.getElementById('avgTemp');
@@ -411,7 +428,7 @@ $(window).on("load", function () {
             }
         },
         min: 0,
-        max: 6000,
+        max: 4000,
         startOnTick: false,
         endOnTick: false
       },
@@ -501,6 +518,14 @@ setInterval(function onlineStatus(){
             'rpm/readRpm':0
           });
 
+        //   firebase.database().ref('ESP8266_Send_Data').update({
+
+        //     'power/current':0,
+        //     'power/voltage':0,
+        //     'power/power':0,
+        //     'power/powerFactor':0,
+        //   });
+
           document.getElementById('customSwitch4').checked=false;
           document.getElementById('customSwitch4').disabled=true;
 
@@ -540,7 +565,8 @@ setInterval(function onlineStatus(){
 
 function handleMouseMove(value) {
     const rangeValueElement = document.getElementById("speed")
-    rangeValueElement.innerHTML = value + "%"
+    // rangeValueElement.innerHTML = value + "%"
+    rangeValueElement.innerHTML = value
     firebase.database().ref('ESP_Receive_Data/rpm/').update({writeRpm:parseInt(value)});
   }
 
