@@ -518,13 +518,13 @@ setInterval(function onlineStatus(){
             'rpm/readRpm':0
           });
 
-        //   firebase.database().ref('ESP8266_Send_Data').update({
+          firebase.database().ref('ESP8266_Send_Data').update({
 
-        //     'power/current':0,
-        //     'power/voltage':0,
-        //     'power/power':0,
-        //     'power/powerFactor':0,
-        //   });
+            'power/current':0,
+            'power/voltage':0,
+            'power/power':0,
+            'power/powerFactor':0,
+          });
 
           document.getElementById('customSwitch4').checked=false;
           document.getElementById('customSwitch4').disabled=true;
