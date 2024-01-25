@@ -114,6 +114,8 @@ function initengahan(){
   wallpaper.style="transform: scale(1);";
   new TypeIt("#pesan7", {
   strings: ["" + vketik7], startDelay: 1, speed: 52, cursor: true, waitUntilVisible: true, lifelike: true,
+
+  
   afterComplete: function(){
     pesan7.innerHTML=vketik7;fungsi=1;setTimeout(tombol,400);
   },}).go();
@@ -150,10 +152,10 @@ function initengahan(){
   
   async function pertanyaan(){var { isConfirmed: prtanya } = await swals.fire({title: nama + ' ' + tanya, text: '' + opstanya, imageUrl: '' + fotostiker6.src, showCancelButton: true, confirmButtonText: '' + tompositif, cancelButtonText: '' + tomnegatif,});
     if(prtanya){
-  await swalst.fire({title: '' + katatambahan.innerHTML, timer: 2000, imageUrl: '' + stikerditolak.src,});
+  await swalst.fire({title: '' + katatambahan.innerHTML, timer: 3000, imageUrl: '' + stikerditolak.src,});
       vketik8=vketik81;aktipesan8();
     } else {
-	await swalst.fire({title: '' + kataditolak.innerHTML, timer: 2000, imageUrl: '' + stikerditolak.src,});
+	await swalst.fire({title: '' + kataditolak.innerHTML, timer: 3000, imageUrl: '' + stikerditolak.src,});
       vketik8="";aktipesan8();
     }
     }
