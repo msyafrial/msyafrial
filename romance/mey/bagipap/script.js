@@ -85,7 +85,7 @@ window.addEventListener("load", (event) => {
   var overlay = document.querySelector(".overlay");
   overlay.style.display = "none";
   loadfoto();
-  wallpaper.style="opacity:.3";
+  wallpaper.style="opacity:.3;pointer-events: none";
   Content.style = "opacity:1;margin-top:25vh";
 });
 
