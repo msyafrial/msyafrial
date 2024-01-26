@@ -1,0 +1,96 @@
+
+<html><meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script><link href="style.css" rel="stylesheet" type="text/css" />
+<head>
+<title>Bagi pap 😍</title>
+
+<style>
+  :root {
+  --warna-bg: rgba(0, 0, 0, .75); 
+  --warna-teks: white;
+  --warna-bingkai: rgba(255, 255, 255, .8);
+  --bingkai: 10px;
+  --gaya-font: 'Ubuntu', sans-serif; 
+  }
+ 
+  .lovein{font-size:50px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+  .lovein svg{width:80px;height:80px;fill:#fefefe}
+  #loveIn img{display:inline-flex;background:rgba(255,255,255, 1);border-radius:10%;padding:10px;width:140px;height:110px;transition:all .3s ease;}
+  #loveIn   img:hover{transform:scale(.9);}
+  </style>
+
+</head>
+<body>
+
+	<audio src="https://audio.jukehost.co.uk/IPMxjSmevlyRs2Fe2A8ZqwGEsKb7HjGQ" id="linkmp3" class="sembunyi"></audio>
+
+   <div id="bgbelakang">
+     <img src="" id="wallpaper"/>
+   </div>
+
+   <div class="overlay">
+     <div class="loading-message">Harap tunggu...</div>
+   </div>
+
+   <div id='Content'>
+   	
+      <div id="loveIn">
+        <!-- Surat --><img src="https://rayyscoding.github.io/envelope.png"/>
+      </div>
+      <p id="ket">Klik Suratnya!</p>
+
+   
+
+   <div><img id="fotosatu" src=""/><img id="fotodua" src=""/><img id="fototiga" src=""/><img id="fotoempat" src=""/><img id="fotolima" src=""/><img id="fotoenam" src=""/><img id="fototujuh" src=""/><img id="fotodelapan" src=""/><img id="fotosembilan" src=""/></div>
+
+   <div><blockquote id='bq'>
+   <p id="kalimat"></p>
+   <p id="text-container"></p>
+   <p id="kalimatc"></p>
+   </blockquote></div>
+
+   </div>
+
+<script src="script.js"></script>
+<script>
+const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+
+function pergantian(){
+    setTimeout(gantikata,100); //1
+    setTimeout(gantikata,1900); //2
+    setTimeout(gantikata,3300); //3
+    setTimeout(gantikata,4800); //4
+    setTimeout(bawahlagi,7900); //5
+}
+  
+async function pertama(){
+    kata1 = "Aku Orangnya Pelupa 👉👈";
+    kata2 = "Aku Juga Lupa..";
+    kata3 = "Sama Muka Kamu! 😝";
+    perkata = ["Coba deh", "Bagi PAP", "Banyak", "Banyak"];
+    emot = "Hehehehe 😆😝🥰💗";
+         
+    fotosatu.style="display:inline-flex";audio.play();showDiv()
+} 
+       
+  function loadfoto(){
+    wallpaper.src = "image1.jpg";
+    
+    gambar1 = "https://feeldreams.github.io/pandahiya.gif";
+    gambar2 = "https://feeldreams.github.io/mikir.gif";
+    gambar3 = "https://feeldreams.github.io/weee.gif";
+    gambar4 = "https://feeldreams.github.io/emawh.gif";
+    gambar5 = "https://feeldreams.github.io/pandaketawa2.gif";
+    /*gambar6 = "https://feeldreams.github.io/pusn.gif";
+    gambar7 = "https://feeldreams.github.io/mmua.gif";
+    gambar8 = "https://feeldreams.github.io/lompatin.gif";
+    gambar9 = "https://feeldreams.github.io/pandaberi.gif";
+    */
+
+    loadbrn();
+  }
+</script>
+
+</body>
+</html>
